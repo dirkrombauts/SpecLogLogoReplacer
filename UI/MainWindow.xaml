@@ -15,7 +15,7 @@
       <ColumnDefinition />
     </Grid.ColumnDefinitions>
     <Label>Path to exported html file:</Label>
-    <TextBox x:Name="specLogFilePath" x:FieldModifier="private" Grid.Row="0" Grid.Column="1" />
+    <TextBox Grid.Row="0" Grid.Column="1" Text="{Binding Path=PathToSpecLogFile}" />
     <Label Grid.Row="1" Grid.Column="0">Path to logo of your company:</Label>
     <TextBox x:Name="newLogoPath" x:FieldModifier="private" Grid.Row="1" Grid.Column="1" />
     <Label Grid.Row="2" Grid.Column="0">Supported image types: .png</Label>

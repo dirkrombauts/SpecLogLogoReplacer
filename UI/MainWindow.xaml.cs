@@ -4,6 +4,8 @@ using System.Drawing.Imaging;
 using System.IO.Abstractions;
 using System.Windows;
 
+using SpecLogLogoReplacer.UI.ViewModel;
+
 namespace SpecLogLogoReplacer.UI
 {
   public partial class MainWindow
@@ -17,9 +19,17 @@ namespace SpecLogLogoReplacer.UI
       this.fileSystem = new FileSystem();
     }
 
+    private MainViewModel ViewModel
+    {
+      get
+      {
+        return (MainViewModel)DataContext;
+      }
+    }
+
     private void ButtonBase_OnClick(object sender, RoutedEventArgs e)
     {
-      var pathToSpecLogFile = this.specLogFilePath.Text;
+      var pathToSpecLogFile = this.ViewModel.PathToSpecLogFile;
       var pathToNewLogo = this.newLogoPath.Text;
 
       var specLogFile = this.fileSystem.File.ReadAllText(pathToSpecLogFile);
