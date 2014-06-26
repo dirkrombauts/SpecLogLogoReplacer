@@ -19,7 +19,7 @@ namespace SpecLogLogoReplacer.UI
                 <img alt=""Logo"" src=""data:image/png;base64,{0}"" />
             </div>";
 
-    public string Replace(string htmlFile, Bitmap newLogo, ImageFormat imageFormat)
+    public string Replace(string htmlFile, Image newLogo, ImageFormat imageFormat)
     {
       if (htmlFile == null)
       {
@@ -38,7 +38,7 @@ namespace SpecLogLogoReplacer.UI
       return result;
     }
 
-    public string ConvertBitmapToBase64(Bitmap bitmap, ImageFormat imageFormat)
+    public string ConvertBitmapToBase64(Image bitmap, ImageFormat imageFormat)
     {
       if (bitmap == null)
       {
