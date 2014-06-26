@@ -4,6 +4,13 @@
         xmlns:controls="clr-namespace:MahApps.Metro.Controls;assembly=MahApps.Metro"
         Title="SpecLog Logo Replacer" Height="350" Width="525">
   <Grid>
-        
-    </Grid>
+    <Grid.RowDefinitions>
+      <RowDefinition />
+      <RowDefinition />
+      <RowDefinition />
+    </Grid.RowDefinitions>
+    <TextBox x:Name="specLogFilePath" x:FieldModifier="private" />
+    <TextBox x:Name="newLogoPath" x:FieldModifier="private" Grid.Row="1" />
+    <Button Grid.Row="2" Click="ButtonBase_OnClick">Transform!</Button>
+  </Grid>
 </controls:MetroWindow>
