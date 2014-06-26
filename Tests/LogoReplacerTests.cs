@@ -19,7 +19,7 @@ namespace SpecLogLogoReplacer.Tests
     {
       var logoReplacer = CreateLogoReplacer();
 
-      Check.ThatCode(() => logoReplacer.Replace(null, null))
+      Check.ThatCode(() => logoReplacer.Replace(null, null, null))
         .Throws<ArgumentNullException>()
         .WithProperty("ParamName", "htmlFile");
     }
@@ -31,13 +31,23 @@ namespace SpecLogLogoReplacer.Tests
     }
 
     [Test]
-    public void Replace_NotNullHtmlFileButNewLogoNull_ThrowsArgumentNullExceptionForNewLogo()
+    public void Replace_NewLogoNull_ThrowsArgumentNullExceptionForNewLogo()
     {
       var logoReplacer = CreateLogoReplacer();
 
-      Check.ThatCode(() => logoReplacer.Replace("<html />", null))
+      Check.ThatCode(() => logoReplacer.Replace("<html />", null, null))
         .Throws<ArgumentNullException>()
         .WithProperty("ParamName", "newLogo");
+    }
+
+    [Test]
+    public void Replace_ImageFormatNull_ThrowsArgumentNullExceptionForImageFormat()
+    {
+      var logoReplacer = CreateLogoReplacer();
+
+      Check.ThatCode(() => logoReplacer.Replace("<html />", Resources.logo, null))
+        .Throws<ArgumentNullException>()
+        .WithProperty("ParamName", "imageFormat");
     }
 
     [Test]

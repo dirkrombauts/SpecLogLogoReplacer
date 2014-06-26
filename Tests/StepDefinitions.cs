@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Drawing;
+using System.Drawing.Imaging;
 
 using NFluent;
 
@@ -40,7 +41,7 @@ namespace SpecLogLogoReplacer.Tests
           }
       }
 
-      this.htmlFile = new LogoReplacer().Replace(this.htmlFile, newLogo);
+      this.htmlFile = new LogoReplacer().Replace(this.htmlFile, newLogo, ImageFormat.Png);
     }
 
     [Then(@"the html file should contain")]
