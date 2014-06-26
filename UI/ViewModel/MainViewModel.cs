@@ -61,5 +61,36 @@ namespace SpecLogLogoReplacer.UI.ViewModel
             RaisePropertyChanged(PathToSpecLogFilePropertyName);
           }
         }
+
+        /// <summary>
+        /// The <see cref="PathToLogo" /> property's name.
+        /// </summary>
+        public const string PathToLogoPropertyName = "PathToLogo";
+
+        private string pathToLogo = string.Empty;
+
+        /// <summary>
+        /// Sets and gets the PathToLogo property.
+        /// Changes to that property's value raise the PropertyChanged event. 
+        /// </summary>
+        public string PathToLogo
+        {
+          get
+          {
+            return pathToLogo;
+          }
+
+          set
+          {
+            if (pathToLogo == value)
+            {
+              return;
+            }
+
+            RaisePropertyChanging(PathToLogoPropertyName);
+            pathToLogo = value;
+            RaisePropertyChanged(PathToLogoPropertyName);
+          }
+        }
     }
 }

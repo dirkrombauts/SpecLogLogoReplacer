@@ -30,7 +30,7 @@ namespace SpecLogLogoReplacer.UI
     private void ButtonBase_OnClick(object sender, RoutedEventArgs e)
     {
       var pathToSpecLogFile = this.ViewModel.PathToSpecLogFile;
-      var pathToNewLogo = this.newLogoPath.Text;
+      var pathToNewLogo = this.ViewModel.PathToLogo;
 
       var specLogFile = this.fileSystem.File.ReadAllText(pathToSpecLogFile);
 
