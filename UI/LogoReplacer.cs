@@ -1,5 +1,7 @@
 ﻿using System;
 using System.Drawing;
+using System.Drawing.Imaging;
+using System.IO;
 
 namespace SpecLogLogoReplacer.UI
 {
@@ -18,6 +20,29 @@ namespace SpecLogLogoReplacer.UI
       }
 
       return null;
+    }
+
+    public string ConvertBitmapToBase64(Bitmap bitmap, ImageFormat imageFormat)
+    {
+      if (bitmap == null)
+      {
+        throw new ArgumentNullException("bitmap");
+      }
+
+      if (imageFormat == null)
+      {
+        throw new ArgumentNullException("imageFormat");
+      }
+
+      string result;
+
+      using (var ms = new MemoryStream())
+      {
+        bitmap.Save(ms, imageFormat);
+        result = Convert.ToBase64String(ms.ToArray());
+      }
+
+      return result;
     }
   }
 }
