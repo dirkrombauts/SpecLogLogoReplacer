@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Drawing;
+using System.Drawing.Imaging;
 using System.IO.Abstractions;
 using System.Windows;
 
@@ -30,7 +31,7 @@ namespace SpecLogLogoReplacer.UI
         newLogo = Image.FromStream(stream);
       }
 
-      var patchedSpecLogFile = new LogoReplacer().Replace(specLogFile, newLogo);
+      var patchedSpecLogFile = new LogoReplacer().Replace(specLogFile, newLogo, ImageFormat.Png);
 
       this.fileSystem.File.WriteAllText(pathToSpecLogFile, patchedSpecLogFile);
     }
