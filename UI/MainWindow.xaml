@@ -19,6 +19,6 @@
     <Label Grid.Row="1" Grid.Column="0">Path to logo of your company:</Label>
     <TextBox Grid.Row="1" Grid.Column="1" Text="{Binding Path=PathToLogo}" />
     <Label Grid.Row="2" Grid.Column="0">Supported image types: .png</Label>
-    <Button Grid.Row="2" Click="ButtonBase_OnClick" Grid.Column="1" Height="Auto" Width="Auto" HorizontalAlignment="Right" VerticalAlignment="Bottom" Margin="0,0,10,10">Transform!</Button>
+    <Button Grid.Row="2" Command="{Binding Path=Transform}" Grid.Column="1" Height="Auto" Width="Auto" HorizontalAlignment="Right" VerticalAlignment="Bottom" Margin="0,0,10,10">Transform!</Button>
   </Grid>
 </controls:MetroWindow>

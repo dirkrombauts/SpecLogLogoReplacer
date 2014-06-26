@@ -1,4 +1,9 @@
+using System.Drawing;
+using System.Drawing.Imaging;
+using System.IO.Abstractions;
+
 using GalaSoft.MvvmLight;
+using GalaSoft.MvvmLight.Command;
 
 namespace SpecLogLogoReplacer.UI.ViewModel
 {
@@ -16,19 +21,24 @@ namespace SpecLogLogoReplacer.UI.ViewModel
     /// </summary>
     public class MainViewModel : ViewModelBase
     {
+        private readonly IFileSystem fileSystem;
+      
         /// <summary>
         /// Initializes a new instance of the MainViewModel class.
         /// </summary>
         public MainViewModel()
         {
-            ////if (IsInDesignMode)
-            ////{
-            ////    // Code runs in Blend --> create design time data.
-            ////}
-            ////else
-            ////{
-            ////    // Code runs "for real"
-            ////}
+          ////if (IsInDesignMode)
+          ////{
+          ////    // Code runs in Blend --> create design time data.
+          ////}
+          ////else
+          ////{
+          ////    // Code runs "for real"
+          ////}
+            
+          this.fileSystem = new FileSystem();
+          this.transformCommand = new RelayCommand(DoTransform);
         }
 
         /// <summary>
@@ -92,5 +102,37 @@ namespace SpecLogLogoReplacer.UI.ViewModel
             RaisePropertyChanged(PathToLogoPropertyName);
           }
         }
+
+        private readonly RelayCommand transformCommand;
+
+        /// <summary>
+        /// Gets the Transform command.
+        /// </summary>
+        public RelayCommand Transform
+        {
+          get
+          {
+            return transformCommand;
+          }
+        }
+
+      private void DoTransform()
+      {
+        var specLogFilePath = this.PathToSpecLogFile;
+        var pathToNewLogo = this.PathToLogo;
+
+        var specLogFile = this.fileSystem.File.ReadAllText(specLogFilePath);
+
+        Image newLogo;
+
+        using (var stream = this.fileSystem.File.OpenRead(pathToNewLogo))
+        {
+          newLogo = Image.FromStream(stream);
+        }
+
+        var patchedSpecLogFile = new LogoReplacer().Replace(specLogFile, newLogo, ImageFormat.Png);
+
+        this.fileSystem.File.WriteAllText(specLogFilePath, patchedSpecLogFile);
+      }
     }
 }
