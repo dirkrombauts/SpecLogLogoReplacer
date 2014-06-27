@@ -10,7 +10,7 @@ using TechTalk.SpecFlow;
 namespace SpecLogLogoReplacer.Tests
 {
   [Binding]
-  public class SaveSettingsStepDefinitions
+  public class LoadingAndSavingSettingsStepDefinitions
   {
     private readonly MockFileSystem fileSystem;
 
@@ -18,7 +18,7 @@ namespace SpecLogLogoReplacer.Tests
 
     private readonly SettingsManager settingsManager;
 
-    public SaveSettingsStepDefinitions()
+    public LoadingAndSavingSettingsStepDefinitions()
     {
       this.fileSystem = new MockFileSystem();
       this.settingsManager = new SettingsManager(this.fileSystem);
