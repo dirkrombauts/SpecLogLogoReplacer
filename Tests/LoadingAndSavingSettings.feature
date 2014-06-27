@@ -14,7 +14,7 @@ Scenario: Saving Settings
     </specLogLogoReplacer>
     """
 
-Scenario: Reading Settings
+Scenario: Loading Settings
   Given the settings file consists of
     """
     <?xml version="1.0" encoding="utf-8"?>

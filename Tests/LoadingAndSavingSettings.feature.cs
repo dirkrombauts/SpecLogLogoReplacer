@@ -93,10 +93,10 @@ this.ScenarioSetup(scenarioInfo);
         }
         
         [NUnit.Framework.TestAttribute()]
-        [NUnit.Framework.DescriptionAttribute("Reading Settings")]
-        public virtual void ReadingSettings()
+        [NUnit.Framework.DescriptionAttribute("Loading Settings")]
+        public virtual void LoadingSettings()
         {
-            TechTalk.SpecFlow.ScenarioInfo scenarioInfo = new TechTalk.SpecFlow.ScenarioInfo("Reading Settings", ((string[])(null)));
+            TechTalk.SpecFlow.ScenarioInfo scenarioInfo = new TechTalk.SpecFlow.ScenarioInfo("Loading Settings", ((string[])(null)));
 #line 17
 this.ScenarioSetup(scenarioInfo);
 #line hidden
