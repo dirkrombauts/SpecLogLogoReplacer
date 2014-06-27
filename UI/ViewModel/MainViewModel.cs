@@ -17,7 +17,8 @@ namespace SpecLogLogoReplacer.UI.ViewModel
     /// </summary>
     public class MainViewModel : ViewModelBase
     {
-      
+        private readonly ISpecLogTransformer specLogTransformer;
+
         /// <summary>
         /// Initializes a new instance of the MainViewModel class.
         /// </summary>
@@ -31,7 +32,8 @@ namespace SpecLogLogoReplacer.UI.ViewModel
           ////{
           ////    // Code runs "for real"
           ////}
-            
+
+          this.specLogTransformer = new SpecLogTransformer();
           this.transformCommand = new RelayCommand(DoTransform);
         }
 
@@ -109,8 +111,6 @@ namespace SpecLogLogoReplacer.UI.ViewModel
             return transformCommand;
           }
         }
-
-      private readonly ISpecLogTransformer specLogTransformer = new SpecLogTransformer();
 
       private void DoTransform()
       {
