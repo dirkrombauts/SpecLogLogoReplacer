@@ -3,7 +3,8 @@
         xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
         xmlns:controls="clr-namespace:MahApps.Metro.Controls;assembly=MahApps.Metro"
         Title="SpecLog Logo Replacer" Height="350" Width="525"
-        DataContext="{Binding Main, Source={StaticResource Locator}}">
+        DataContext="{Binding Main, Source={StaticResource Locator}}"
+                      Loaded="MainWindow_OnLoaded" Closed="MainWindow_OnClosed">
   <Grid>
     <Grid.RowDefinitions>
       <RowDefinition Height="Auto" />

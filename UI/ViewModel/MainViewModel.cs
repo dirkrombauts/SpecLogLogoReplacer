@@ -94,6 +94,17 @@ namespace SpecLogLogoReplacer.UI.ViewModel
           }
         }
 
+        public Settings GetSettings()
+        {
+          return new Settings { PathToLogo = this.PathToLogo, PathToSpecLogHtmlFile = this.PathToSpecLogFile };
+        }
+
+        public void SetSettings(Settings settings)
+        {
+          this.PathToLogo = settings.PathToLogo;
+          this.PathToSpecLogFile = settings.PathToSpecLogHtmlFile;
+        }
+
       private void DoTransform()
       {
         this.specLogTransformer.Transform(this.PathToSpecLogFile, this.PathToLogo);
