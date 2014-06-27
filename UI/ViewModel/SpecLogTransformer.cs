@@ -10,8 +10,8 @@ namespace SpecLogLogoReplacer.UI.ViewModel
     private readonly IFileSystem fileSystem;
 
     public SpecLogTransformer()
+      : this (new FileSystem())
     {
-      this.fileSystem = new FileSystem();
     }
 
     public SpecLogTransformer(IFileSystem fileSystem)
