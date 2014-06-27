@@ -21,15 +21,8 @@ namespace SpecLogLogoReplacer.UI.ViewModel
 
     public void Transform(string pathToSpecLogFile, string pathToLogo)
     {
-      if (pathToSpecLogFile == null)
-      {
-        throw new ArgumentNullException("pathToSpecLogFile");
-      }
-
-      if (pathToLogo == null)
-      {
-        throw new ArgumentNullException("pathToLogo");
-      }
+      if (pathToSpecLogFile == null) throw new ArgumentNullException("pathToSpecLogFile");
+      if (pathToLogo == null) throw new ArgumentNullException("pathToLogo");
 
       pathToSpecLogFile = SanitizePath(pathToSpecLogFile);
       pathToLogo = SanitizePath(pathToLogo);
