@@ -38,9 +38,15 @@ namespace SpecLogLogoReplacer.UI.ViewModel
 
       var newLogo = LoadLogo(pathToLogo);
 
-      var patchedSpecLogFile = new LogoReplacer().Replace(specLogFile, newLogo, ImageFormat.Png);
+      var patchedSpecLogFile = PatchSpecLogFile(specLogFile, newLogo);
 
       this.fileSystem.File.WriteAllText(pathToSpecLogFile, patchedSpecLogFile);
+    }
+
+    private static string PatchSpecLogFile(string specLogFile, Image newLogo)
+    {
+      var patchedSpecLogFile = new LogoReplacer().Replace(specLogFile, newLogo, ImageFormat.Png);
+      return patchedSpecLogFile;
     }
 
     private string LoadSpecLogHtmlFile(string pathToSpecLogFile)
