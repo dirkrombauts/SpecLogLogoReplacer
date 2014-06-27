@@ -16,12 +16,12 @@ namespace SpecLogLogoReplacer.Tests
 
     private Settings settings;
 
-    private readonly SettingsSaver settingsSaver;
+    private readonly SettingsManager settingsManager;
 
     public SaveSettingsStepDefinitions()
     {
       this.fileSystem = new MockFileSystem();
-      this.settingsSaver = new SettingsSaver(this.fileSystem);
+      this.settingsManager = new SettingsManager(this.fileSystem);
     }
 
     [Given(@"I have these settings")]
@@ -36,7 +36,7 @@ namespace SpecLogLogoReplacer.Tests
     [When(@"I save the settings")]
     public void WhenISaveTheSettings()
     {
-      settingsSaver.SaveSettings(@"c:\settings.xml", this.settings);
+      settingsManager.SaveSettings(@"c:\settings.xml", this.settings);
     }
 
     [Then(@"the settings file consists of")]
@@ -56,7 +56,7 @@ namespace SpecLogLogoReplacer.Tests
     [When(@"I load the settings")]
     public void WhenILoadTheSettings()
     {
-      this.settings = settingsSaver.LoadSettings(@"c:\settings.xml");
+      this.settings = settingsManager.LoadSettings(@"c:\settings.xml");
     }
   
     [Then(@"I should have these settings")]

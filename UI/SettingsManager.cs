@@ -3,11 +3,11 @@ using System.IO.Abstractions;
 
 namespace SpecLogLogoReplacer.UI
 {
-  public class SettingsSaver
+  public class SettingsManager
   {
     private readonly IFileSystem fileSystem;
 
-    public SettingsSaver(IFileSystem fileSystem)
+    public SettingsManager(IFileSystem fileSystem)
     {
       this.fileSystem = fileSystem;
     }

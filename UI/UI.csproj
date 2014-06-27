@@ -75,7 +75,7 @@
       <SubType>Designer</SubType>
     </ApplicationDefinition>
     <Compile Include="Settings.cs" />
-    <Compile Include="SettingsSaver.cs" />
+    <Compile Include="SettingsManager.cs" />
     <Compile Include="StreamExtensions.cs" />
     <Compile Include="ViewModel\ISpecLogTransformer.cs" />
     <Compile Include="ViewModel\MainViewModel.cs" />
