@@ -31,15 +31,7 @@ namespace SpecLogLogoReplacer.UI.ViewModel
         throw new ArgumentNullException("pathToLogo");
       }
 
-      if (pathToSpecLogFile.StartsWith("\""))
-      {
-        pathToSpecLogFile = pathToSpecLogFile.Substring(1);
-      }
-
-      if (pathToSpecLogFile.EndsWith("\""))
-      {
-        pathToSpecLogFile = pathToSpecLogFile.Substring(0, pathToSpecLogFile.Length - 1);
-      }
+      pathToSpecLogFile = SanitizePathToSpecLogFile(pathToSpecLogFile);
 
       var specLogFile = this.fileSystem.File.ReadAllText(pathToSpecLogFile);
 
@@ -53,6 +45,20 @@ namespace SpecLogLogoReplacer.UI.ViewModel
       var patchedSpecLogFile = new LogoReplacer().Replace(specLogFile, newLogo, ImageFormat.Png);
 
       this.fileSystem.File.WriteAllText(pathToSpecLogFile, patchedSpecLogFile);
+    }
+
+    private static string SanitizePathToSpecLogFile(string pathToSpecLogFile)
+    {
+      if (pathToSpecLogFile.StartsWith("\""))
+      {
+        pathToSpecLogFile = pathToSpecLogFile.Substring(1);
+      }
+
+      if (pathToSpecLogFile.EndsWith("\""))
+      {
+        pathToSpecLogFile = pathToSpecLogFile.Substring(0, pathToSpecLogFile.Length - 1);
+      }
+      return pathToSpecLogFile;
     }
   }
 }
