@@ -14,6 +14,11 @@ namespace SpecLogLogoReplacer.UI.ViewModel
       this.fileSystem = new FileSystem();
     }
 
+    public SpecLogTransformer(IFileSystem fileSystem)
+    {
+      this.fileSystem = fileSystem;
+    }
+
     public void Transform(string pathToSpecLogFile, string pathToLogo)
     {
       var specLogFile = this.fileSystem.File.ReadAllText(pathToSpecLogFile);
