@@ -31,8 +31,8 @@ namespace SpecLogLogoReplacer.UI.ViewModel
         throw new ArgumentNullException("pathToLogo");
       }
 
-      pathToSpecLogFile = SanitizePathToSpecLogFile(pathToSpecLogFile);
-      pathToLogo = SanitizePathToSpecLogFile(pathToLogo);
+      pathToSpecLogFile = SanitizePath(pathToSpecLogFile);
+      pathToLogo = SanitizePath(pathToLogo);
 
       var specLogFile = this.fileSystem.File.ReadAllText(pathToSpecLogFile);
 
@@ -48,7 +48,7 @@ namespace SpecLogLogoReplacer.UI.ViewModel
       this.fileSystem.File.WriteAllText(pathToSpecLogFile, patchedSpecLogFile);
     }
 
-    private static string SanitizePathToSpecLogFile(string pathToSpecLogFile)
+    private static string SanitizePath(string pathToSpecLogFile)
     {
       if (pathToSpecLogFile.StartsWith("\""))
       {
