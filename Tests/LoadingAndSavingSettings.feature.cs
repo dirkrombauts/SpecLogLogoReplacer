@@ -65,12 +65,20 @@ namespace SpecLogLogoReplacer.Tests
         }
         
         [NUnit.Framework.TestAttribute()]
-        [NUnit.Framework.DescriptionAttribute("Saving Settings")]
-        public virtual void SavingSettings()
+        [NUnit.Framework.DescriptionAttribute("Loading Settings")]
+        public virtual void LoadingSettings()
         {
-            TechTalk.SpecFlow.ScenarioInfo scenarioInfo = new TechTalk.SpecFlow.ScenarioInfo("Saving Settings", ((string[])(null)));
+            TechTalk.SpecFlow.ScenarioInfo scenarioInfo = new TechTalk.SpecFlow.ScenarioInfo("Loading Settings", ((string[])(null)));
 #line 3
 this.ScenarioSetup(scenarioInfo);
+#line hidden
+#line 4
+  testRunner.Given("the settings file consists of", "<?xml version=\"1.0\" encoding=\"utf-8\"?>\r\n<specLogLogoReplacer xmlns:i=\"http://www." +
+                    "w3.org/2001/XMLSchema-instance\">\r\n  <pathToSpecLogHtmlFile>c:\\speclog.html</path" +
+                    "ToSpecLogHtmlFile>\r\n  <pathToSpecLogo>c:\\logo.png</pathToSpecLogo>\r\n</specLogLog" +
+                    "oReplacer>", ((TechTalk.SpecFlow.Table)(null)), "Given ");
+#line 12
+  testRunner.When("I load the settings", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
 #line hidden
             TechTalk.SpecFlow.Table table1 = new TechTalk.SpecFlow.Table(new string[] {
                         "Path to SpecLog Html File",
@@ -78,35 +86,19 @@ this.ScenarioSetup(scenarioInfo);
             table1.AddRow(new string[] {
                         "c:\\speclog.html",
                         "c:\\logo.png"});
-#line 4
-  testRunner.Given("I have these settings", ((string)(null)), table1, "Given ");
-#line 7
-  testRunner.When("I save the settings", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
-#line hidden
-#line 8
-  testRunner.Then("the settings file consists of", "<?xml version=\"1.0\" encoding=\"utf-8\"?>\r\n<specLogLogoReplacer xmlns:i=\"http://www." +
-                    "w3.org/2001/XMLSchema-instance\">\r\n  <pathToSpecLogHtmlFile>c:\\speclog.html</path" +
-                    "ToSpecLogHtmlFile>\r\n  <pathToSpecLogo>c:\\logo.png</pathToSpecLogo>\r\n</specLogLog" +
-                    "oReplacer>", ((TechTalk.SpecFlow.Table)(null)), "Then ");
+#line 13
+  testRunner.Then("I should have these settings", ((string)(null)), table1, "Then ");
 #line hidden
             this.ScenarioCleanup();
         }
         
         [NUnit.Framework.TestAttribute()]
-        [NUnit.Framework.DescriptionAttribute("Loading Settings")]
-        public virtual void LoadingSettings()
+        [NUnit.Framework.DescriptionAttribute("Saving Settings")]
+        public virtual void SavingSettings()
         {
-            TechTalk.SpecFlow.ScenarioInfo scenarioInfo = new TechTalk.SpecFlow.ScenarioInfo("Loading Settings", ((string[])(null)));
+            TechTalk.SpecFlow.ScenarioInfo scenarioInfo = new TechTalk.SpecFlow.ScenarioInfo("Saving Settings", ((string[])(null)));
 #line 17
 this.ScenarioSetup(scenarioInfo);
-#line hidden
-#line 18
-  testRunner.Given("the settings file consists of", "<?xml version=\"1.0\" encoding=\"utf-8\"?>\r\n<specLogLogoReplacer xmlns:i=\"http://www." +
-                    "w3.org/2001/XMLSchema-instance\">\r\n  <pathToSpecLogHtmlFile>c:\\speclog.html</path" +
-                    "ToSpecLogHtmlFile>\r\n  <pathToSpecLogo>c:\\logo.png</pathToSpecLogo>\r\n</specLogLog" +
-                    "oReplacer>", ((TechTalk.SpecFlow.Table)(null)), "Given ");
-#line 26
-  testRunner.When("I load the settings", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
 #line hidden
             TechTalk.SpecFlow.Table table2 = new TechTalk.SpecFlow.Table(new string[] {
                         "Path to SpecLog Html File",
@@ -114,8 +106,16 @@ this.ScenarioSetup(scenarioInfo);
             table2.AddRow(new string[] {
                         "c:\\speclog.html",
                         "c:\\logo.png"});
-#line 27
-  testRunner.Then("I should have these settings", ((string)(null)), table2, "Then ");
+#line 18
+  testRunner.Given("I have these settings", ((string)(null)), table2, "Given ");
+#line 21
+  testRunner.When("I save the settings", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
+#line hidden
+#line 22
+  testRunner.Then("the settings file consists of", "<?xml version=\"1.0\" encoding=\"utf-8\"?>\r\n<specLogLogoReplacer xmlns:i=\"http://www." +
+                    "w3.org/2001/XMLSchema-instance\">\r\n  <pathToSpecLogHtmlFile>c:\\speclog.html</path" +
+                    "ToSpecLogHtmlFile>\r\n  <pathToSpecLogo>c:\\logo.png</pathToSpecLogo>\r\n</specLogLog" +
+                    "oReplacer>", ((TechTalk.SpecFlow.Table)(null)), "Then ");
 #line hidden
             this.ScenarioCleanup();
         }
