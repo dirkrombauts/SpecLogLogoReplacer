@@ -32,6 +32,7 @@ namespace SpecLogLogoReplacer.UI.ViewModel
       }
 
       pathToSpecLogFile = SanitizePathToSpecLogFile(pathToSpecLogFile);
+      pathToLogo = SanitizePathToSpecLogFile(pathToLogo);
 
       var specLogFile = this.fileSystem.File.ReadAllText(pathToSpecLogFile);
 

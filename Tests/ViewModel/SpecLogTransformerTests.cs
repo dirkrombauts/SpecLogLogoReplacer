@@ -90,5 +90,25 @@ namespace SpecLogLogoReplacer.Tests.ViewModel
 
       Check.ThatCode(() => transformer.Transform(@"""""", @"c:\logo.png")).Throws<System.IO.FileNotFoundException>();
     }
+
+    [Test]
+    public void Transform_PathToLogoStartsWithDoubleQuote_ShouldNotThrowArgumentException()
+    {
+      var mockFileSystem = CreateFileSystemWithSimpleHtmlAndDefaultLogo();
+      var transformer = CreateSpecLogTransformer(mockFileSystem);
+
+      Check.ThatCode(() => transformer.Transform(@"c:\speclog.html", @"""c:\logo.png"))
+        .DoesNotThrow();
+    }
+
+    [Test]
+    public void Transform_PathToLogoEndsWithDoubleQuote_ShouldNotThrowArgumentException()
+    {
+      var mockFileSystem = CreateFileSystemWithSimpleHtmlAndDefaultLogo();
+      var transformer = CreateSpecLogTransformer(mockFileSystem);
+
+      Check.ThatCode(() => transformer.Transform(@"c:\speclog.html", @"c:\logo.png"""))
+        .DoesNotThrow();
+    }
   }
 }
