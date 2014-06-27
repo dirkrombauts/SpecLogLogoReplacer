@@ -55,7 +55,7 @@ namespace SpecLogLogoReplacer.Tests.ViewModel
     {
       var mockFileSystem = new MockFileSystem();
       mockFileSystem.AddFile(@"c:\speclog.html", new MockFileData("<html />"));
-      mockFileSystem.AddFile(@"c:\logo.png", new MockFileData(LogoReplacer.ConvertTo(Resources.logo, ImageFormat.Png)));
+      mockFileSystem.AddFile(@"c:\logo.png", new MockFileData(LogoReplacer.ConvertToBytes(Resources.logo, ImageFormat.Png)));
       return mockFileSystem;
     }
 

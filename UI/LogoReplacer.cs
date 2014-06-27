@@ -50,14 +50,14 @@ namespace SpecLogLogoReplacer.UI
         throw new ArgumentNullException("imageFormat");
       }
 
-      var bytes = ConvertTo(bitmap, imageFormat);
+      var bytes = ConvertToBytes(bitmap, imageFormat);
 
       string result = Convert.ToBase64String(bytes);
 
       return result;
     }
 
-    public static byte[] ConvertTo(Image bitmap, ImageFormat imageFormat)
+    public static byte[] ConvertToBytes(Image bitmap, ImageFormat imageFormat)
     {
       byte[] bytes;
       using (var ms = new MemoryStream())
