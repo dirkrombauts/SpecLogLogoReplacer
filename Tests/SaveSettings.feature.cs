@@ -84,7 +84,7 @@ this.ScenarioSetup(scenarioInfo);
   testRunner.When("I save the settings", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
 #line hidden
 #line 8
-  testRunner.Then("the settings file contains", "<?xml version=\"1.0\" encoding=\"utf-8\"?>\r\n<specLogLogoReplacer xmlns:i=\"http://www." +
+  testRunner.Then("the settings file consists of", "<?xml version=\"1.0\" encoding=\"utf-8\"?>\r\n<specLogLogoReplacer xmlns:i=\"http://www." +
                     "w3.org/2001/XMLSchema-instance\">\r\n  <pathToSpecLogHtmlFile>c:\\speclog.html</path" +
                     "ToSpecLogHtmlFile>\r\n  <pathToSpecLogo>c:\\logo.png</pathToSpecLogo>\r\n</specLogLog" +
                     "oReplacer>", ((TechTalk.SpecFlow.Table)(null)), "Then ");

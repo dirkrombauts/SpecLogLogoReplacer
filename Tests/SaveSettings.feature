@@ -5,7 +5,7 @@ Scenario: Saving Settings
     | Path to SpecLog Html File | Path to Logo |
     | c:\speclog.html           | c:\logo.png  |
   When I save the settings
-  Then the settings file contains
+  Then the settings file consists of
     """
     <?xml version="1.0" encoding="utf-8"?>
     <specLogLogoReplacer xmlns:i="http://www.w3.org/2001/XMLSchema-instance">

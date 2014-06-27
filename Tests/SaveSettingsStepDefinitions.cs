@@ -1,11 +1,28 @@
-﻿using TechTalk.SpecFlow;
+﻿using System.IO.Abstractions;
+using System.IO.Abstractions.TestingHelpers;
+
+using NFluent;
+
+using SpecLogLogoReplacer.UI;
+
+using TechTalk.SpecFlow;
 
 namespace SpecLogLogoReplacer.Tests
 {
   [Binding]
   public class SaveSettingsStepDefinitions
   {
+    private readonly IFileSystem fileSystem;
+
     private Settings settings;
+
+    private readonly SettingsSaver settingsSaver;
+
+    public SaveSettingsStepDefinitions()
+    {
+      this.fileSystem = new MockFileSystem();
+      this.settingsSaver = new SettingsSaver(this.fileSystem);
+    }
 
     [Given(@"I have these settings")]
     public void GivenIHaveTheseSettings(Table table)
@@ -16,12 +33,18 @@ namespace SpecLogLogoReplacer.Tests
       this.settings = new Settings { PathToSpecLogHtmlFile = pathToSpecLogHtmlFile, PathToLogo = pathToLogo };
     }
 
-  }
+    [When(@"I save the settings")]
+    public void WhenISaveTheSettings()
+    {
+      settingsSaver.SaveSettings(@"c:\settings.xml", this.settings);
+    }
 
-  public class Settings
-  {
-    public string PathToSpecLogHtmlFile { get; set; }
+    [Then(@"the settings file consists of")]
+    public void ThenTheSettingsFileConsistsOf(string expectedContent)
+    {
+      var actualContent = this.fileSystem.File.ReadAllText(@"c:\settings.xml");
 
-    public string PathToLogo { get; set; }
+      Check.That(actualContent).IsEqualTo(expectedContent);
+    }
   }
 }
