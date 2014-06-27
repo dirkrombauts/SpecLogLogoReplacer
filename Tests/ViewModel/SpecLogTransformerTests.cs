@@ -64,5 +64,15 @@ namespace SpecLogLogoReplacer.Tests.ViewModel
       var transformer = new SpecLogTransformer(mockFileSystem);
       return transformer;
     }
+
+    [Test]
+    public void Transform_PathToSpecLogFileEndsWithDoubleQuote_ShouldNotThrowArgumentException()
+    {
+      var mockFileSystem = CreateFileSystemWithSimpleHtmlAndDefaultLogo();
+      var transformer = CreateSpecLogTransformer(mockFileSystem);
+
+      Check.ThatCode(() => transformer.Transform(@"c:\speclog.html""", @"c:\logo.png"))
+        .DoesNotThrow();
+    }
   }
 }
