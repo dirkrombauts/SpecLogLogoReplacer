@@ -15,11 +15,17 @@ namespace SpecLogLogoReplacer.Tests.ViewModel
     [Test]
     public void Transform_NullPathToSpecLogFile_ThrowsArgumentNullExceptionForPathToSpecLogFile()
     {
-      var transformer = new SpecLogTransformer(new MockFileSystem());
+      var transformer = CreateSpecLogTransformer();
 
       Check.ThatCode(() => transformer.Transform(null, null))
         .Throws<ArgumentNullException>()
         .WithProperty("ParamName", "pathToSpecLogFile");
+    }
+
+    private static SpecLogTransformer CreateSpecLogTransformer()
+    {
+      var transformer = new SpecLogTransformer(new MockFileSystem());
+      return transformer;
     }
   }
 }
