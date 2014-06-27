@@ -5,7 +5,7 @@ using System.IO.Abstractions;
 
 namespace SpecLogLogoReplacer.UI.ViewModel
 {
-  internal class SpecLogTransformer : ISpecLogTransformer
+  public class SpecLogTransformer : ISpecLogTransformer
   {
     private readonly IFileSystem fileSystem;
 
