@@ -1,4 +1,4 @@
-﻿Feature: Save Settings
+﻿Feature: Loading And Saving Settings
 
 Scenario: Saving Settings
   Given I have these settings

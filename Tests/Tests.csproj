@@ -75,10 +75,10 @@
       <DesignTime>True</DesignTime>
       <DependentUpon>ReplaceLogo.feature</DependentUpon>
     </Compile>
-    <Compile Include="SaveSettings.feature.cs">
+    <Compile Include="LoadingAndSavingSettings.feature.cs">
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
-      <DependentUpon>SaveSettings.feature</DependentUpon>
+      <DependentUpon>LoadingAndSavingSettings.feature</DependentUpon>
     </Compile>
     <Compile Include="SaveSettingsStepDefinitions.cs" />
     <Compile Include="StepDefinitions.cs" />
@@ -92,9 +92,9 @@
       <Generator>SpecFlowSingleFileGenerator</Generator>
       <LastGenOutput>ReplaceLogo.feature.cs</LastGenOutput>
     </None>
-    <None Include="SaveSettings.feature">
+    <None Include="LoadingAndSavingSettings.feature">
       <Generator>SpecFlowSingleFileGenerator</Generator>
-      <LastGenOutput>SaveSettings.feature.cs</LastGenOutput>
+      <LastGenOutput>LoadingAndSavingSettings.feature.cs</LastGenOutput>
     </None>
   </ItemGroup>
   <ItemGroup>
