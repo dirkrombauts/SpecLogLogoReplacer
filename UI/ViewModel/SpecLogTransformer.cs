@@ -36,16 +36,22 @@ namespace SpecLogLogoReplacer.UI.ViewModel
 
       var specLogFile = this.fileSystem.File.ReadAllText(pathToSpecLogFile);
 
+      var newLogo = LoadLogo(pathToLogo);
+
+      var patchedSpecLogFile = new LogoReplacer().Replace(specLogFile, newLogo, ImageFormat.Png);
+
+      this.fileSystem.File.WriteAllText(pathToSpecLogFile, patchedSpecLogFile);
+    }
+
+    private Image LoadLogo(string pathToLogo)
+    {
       Image newLogo;
 
       using (var stream = this.fileSystem.File.OpenRead(pathToLogo))
       {
         newLogo = Image.FromStream(stream);
       }
-
-      var patchedSpecLogFile = new LogoReplacer().Replace(specLogFile, newLogo, ImageFormat.Png);
-
-      this.fileSystem.File.WriteAllText(pathToSpecLogFile, patchedSpecLogFile);
+      return newLogo;
     }
 
     private static string SanitizePath(string pathToSpecLogFile)
