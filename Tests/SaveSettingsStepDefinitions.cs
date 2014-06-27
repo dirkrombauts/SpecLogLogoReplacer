@@ -12,7 +12,7 @@ namespace SpecLogLogoReplacer.Tests
   [Binding]
   public class SaveSettingsStepDefinitions
   {
-    private readonly IFileSystem fileSystem;
+    private readonly MockFileSystem fileSystem;
 
     private Settings settings;
 
@@ -45,6 +45,28 @@ namespace SpecLogLogoReplacer.Tests
       var actualContent = this.fileSystem.File.ReadAllText(@"c:\settings.xml");
 
       Check.That(actualContent).IsEqualTo(expectedContent);
+    }
+
+    [Given(@"the settings file consists of")]
+    public void GivenTheSettingsFileConsistsOf(string multilineText)
+    {
+      this.fileSystem.AddFile(@"c:\settings.xml", new MockFileData(multilineText));
+    }
+
+    [When(@"I load the settings")]
+    public void WhenILoadTheSettings()
+    {
+      this.settings = settingsSaver.LoadSettings(@"c:\settings.xml");
+    }
+  
+    [Then(@"I should have these settings")]
+    public void ThenIShouldHaveTheseSettings(Table table)
+    {
+      string pathToSpecLogHtmlFile = table.Rows[0]["Path to SpecLog Html File"];
+      string pathToLogo = table.Rows[0]["Path to Logo"];
+
+      Check.That(this.settings.PathToSpecLogHtmlFile).IsEqualTo(pathToSpecLogHtmlFile);
+      Check.That(this.settings.PathToLogo).IsEqualTo(pathToLogo);
     }
   }
 }

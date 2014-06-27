@@ -19,5 +19,17 @@ namespace SpecLogLogoReplacer.UI
         stream.Serialize<Settings>(settings);
       }
     }
+
+    public Settings LoadSettings(string path)
+    {
+      Settings result;
+
+      using (var stream = this.fileSystem.File.OpenRead(path))
+      {
+        result = stream.Deserialize<Settings>();
+      }
+
+      return result;
+    }
   }
 }

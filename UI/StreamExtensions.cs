@@ -14,16 +14,16 @@ namespace SpecLogLogoReplacer.UI
       }
     }
 
-    //internal static T Deserialize<T>(this System.IO.Stream stream)
-    //{
-    //  T result;
+    internal static T Deserialize<T>(this System.IO.Stream stream)
+    {
+      T result;
 
-    //  using (XmlReader reader = XmlReader.Create(stream))
-    //  {
-    //    result = (T)new DataContractSerializer(typeof(T)).ReadObject(reader);
-    //  }
+      using (XmlReader reader = XmlReader.Create(stream))
+      {
+        result = (T)new DataContractSerializer(typeof(T)).ReadObject(reader);
+      }
 
-    //  return result;
-    //}
+      return result;
+    }
   }
 }
