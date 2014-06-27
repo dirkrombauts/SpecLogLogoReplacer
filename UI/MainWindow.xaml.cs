@@ -31,20 +31,25 @@ namespace SpecLogLogoReplacer.UI
 
     private void MainWindow_OnLoaded(object sender, RoutedEventArgs e)
     {
-      var pathToSettingsFile = this.fileSystem.Path.Combine(
-        this.fileSystem.Path.GetDirectoryName(Assembly.GetEntryAssembly().Location),
-        "settings.xml");
+      var pathToSettingsFile = DeterminePathToSettingsFile();
 
       var settings = this.fileSystem.File.Exists(pathToSettingsFile) ? this.settingsManager.LoadSettings(pathToSettingsFile) : new Settings();
 
       this.ViewModel.SetSettings(settings);
     }
 
+    private string DeterminePathToSettingsFile()
+    {
+      var pathToSettingsFile =
+        this.fileSystem.Path.Combine(
+          this.fileSystem.Path.GetDirectoryName(Assembly.GetEntryAssembly().Location),
+          "settings.xml");
+      return pathToSettingsFile;
+    }
+
     private void MainWindow_OnClosed(object sender, EventArgs e)
     {
-      var pathToSettingsFile = this.fileSystem.Path.Combine(
-        this.fileSystem.Path.GetDirectoryName(Assembly.GetEntryAssembly().Location),
-        "settings.xml");
+      var pathToSettingsFile = DeterminePathToSettingsFile();
 
       var settings = this.ViewModel.GetSettings();
 
