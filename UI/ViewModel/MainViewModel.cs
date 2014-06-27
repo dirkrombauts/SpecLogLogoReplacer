@@ -1,7 +1,3 @@
-using System.Drawing;
-using System.Drawing.Imaging;
-using System.IO.Abstractions;
-
 using GalaSoft.MvvmLight;
 using GalaSoft.MvvmLight.Command;
 
@@ -120,36 +116,5 @@ namespace SpecLogLogoReplacer.UI.ViewModel
       {
         this.specLogTransformer.Transform(this.PathToSpecLogFile, this.PathToLogo);
       }
-    }
-
-    internal class SpecLogTransformer : ISpecLogTransformer
-    {
-      private readonly IFileSystem fileSystem;
-
-      public SpecLogTransformer()
-      {
-          this.fileSystem = new FileSystem();
-      }
-
-      public void Transform(string pathToSpecLogFile, string pathToLogo)
-      {
-          var specLogFile = this.fileSystem.File.ReadAllText(pathToSpecLogFile);
-
-          Image newLogo;
-
-          using (var stream = this.fileSystem.File.OpenRead(pathToLogo))
-          {
-              newLogo = Image.FromStream(stream);
-          }
-
-          var patchedSpecLogFile = new LogoReplacer().Replace(specLogFile, newLogo, ImageFormat.Png);
-
-          this.fileSystem.File.WriteAllText(pathToSpecLogFile, patchedSpecLogFile);
-      }
-    }
-
-    internal interface ISpecLogTransformer
-    {
-        void Transform(string pathToSpecLogFile, string pathToLogo);
     }
 }
