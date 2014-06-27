@@ -35,7 +35,7 @@ namespace SpecLogLogoReplacer.UI
         this.fileSystem.Path.GetDirectoryName(Assembly.GetEntryAssembly().Location),
         "settings.xml");
 
-      var settings = this.settingsManager.LoadSettings(pathToSettingsFile);
+      var settings = this.fileSystem.File.Exists(pathToSettingsFile) ? this.settingsManager.LoadSettings(pathToSettingsFile) : new Settings();
 
       this.ViewModel.SetSettings(settings);
     }
