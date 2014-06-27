@@ -40,6 +40,11 @@ namespace SpecLogLogoReplacer.UI.ViewModel
 
       var patchedSpecLogFile = PatchSpecLogFile(specLogFile, newLogo);
 
+      ReplaceSpecLogHtmlFile(pathToSpecLogFile, patchedSpecLogFile);
+    }
+
+    private void ReplaceSpecLogHtmlFile(string pathToSpecLogFile, string patchedSpecLogFile)
+    {
       this.fileSystem.File.WriteAllText(pathToSpecLogFile, patchedSpecLogFile);
     }
 
