@@ -34,13 +34,19 @@ namespace SpecLogLogoReplacer.UI.ViewModel
       pathToSpecLogFile = SanitizePath(pathToSpecLogFile);
       pathToLogo = SanitizePath(pathToLogo);
 
-      var specLogFile = this.fileSystem.File.ReadAllText(pathToSpecLogFile);
+      var specLogFile = LoadSpecLogHtmlFile(pathToSpecLogFile);
 
       var newLogo = LoadLogo(pathToLogo);
 
       var patchedSpecLogFile = new LogoReplacer().Replace(specLogFile, newLogo, ImageFormat.Png);
 
       this.fileSystem.File.WriteAllText(pathToSpecLogFile, patchedSpecLogFile);
+    }
+
+    private string LoadSpecLogHtmlFile(string pathToSpecLogFile)
+    {
+      var specLogFile = this.fileSystem.File.ReadAllText(pathToSpecLogFile);
+      return specLogFile;
     }
 
     private Image LoadLogo(string pathToLogo)
