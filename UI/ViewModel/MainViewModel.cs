@@ -21,7 +21,6 @@ namespace SpecLogLogoReplacer.UI.ViewModel
     /// </summary>
     public class MainViewModel : ViewModelBase
     {
-        private readonly IFileSystem fileSystem;
       
         /// <summary>
         /// Initializes a new instance of the MainViewModel class.
@@ -37,7 +36,6 @@ namespace SpecLogLogoReplacer.UI.ViewModel
           ////    // Code runs "for real"
           ////}
             
-          this.fileSystem = new FileSystem();
           this.transformCommand = new RelayCommand(DoTransform);
         }
 
@@ -116,23 +114,42 @@ namespace SpecLogLogoReplacer.UI.ViewModel
           }
         }
 
+      private readonly ISpecLogTransformer specLogTransformer = new SpecLogTransformer();
+
       private void DoTransform()
       {
-        var specLogFilePath = this.PathToSpecLogFile;
-        var pathToNewLogo = this.PathToLogo;
-
-        var specLogFile = this.fileSystem.File.ReadAllText(specLogFilePath);
-
-        Image newLogo;
-
-        using (var stream = this.fileSystem.File.OpenRead(pathToNewLogo))
-        {
-          newLogo = Image.FromStream(stream);
-        }
-
-        var patchedSpecLogFile = new LogoReplacer().Replace(specLogFile, newLogo, ImageFormat.Png);
-
-        this.fileSystem.File.WriteAllText(specLogFilePath, patchedSpecLogFile);
+        this.specLogTransformer.Transform(this.PathToSpecLogFile, this.PathToLogo);
       }
+    }
+
+    internal class SpecLogTransformer : ISpecLogTransformer
+    {
+      private readonly IFileSystem fileSystem;
+
+      public SpecLogTransformer()
+      {
+          this.fileSystem = new FileSystem();
+      }
+
+      public void Transform(string pathToSpecLogFile, string pathToLogo)
+      {
+          var specLogFile = this.fileSystem.File.ReadAllText(pathToSpecLogFile);
+
+          Image newLogo;
+
+          using (var stream = this.fileSystem.File.OpenRead(pathToLogo))
+          {
+              newLogo = Image.FromStream(stream);
+          }
+
+          var patchedSpecLogFile = new LogoReplacer().Replace(specLogFile, newLogo, ImageFormat.Png);
+
+          this.fileSystem.File.WriteAllText(pathToSpecLogFile, patchedSpecLogFile);
+      }
+    }
+
+    internal interface ISpecLogTransformer
+    {
+        void Transform(string pathToSpecLogFile, string pathToLogo);
     }
 }
