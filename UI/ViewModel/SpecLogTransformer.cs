@@ -31,6 +31,11 @@ namespace SpecLogLogoReplacer.UI.ViewModel
         throw new ArgumentNullException("pathToLogo");
       }
 
+      if (pathToSpecLogFile.StartsWith("\""))
+      {
+        pathToSpecLogFile = pathToSpecLogFile.Substring(1);
+      }
+
       var specLogFile = this.fileSystem.File.ReadAllText(pathToSpecLogFile);
 
       Image newLogo;
