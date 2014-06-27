@@ -26,6 +26,11 @@ namespace SpecLogLogoReplacer.UI.ViewModel
         throw new ArgumentNullException("pathToSpecLogFile");
       }
 
+      if (pathToLogo == null)
+      {
+        throw new ArgumentNullException("pathToLogo");
+      }
+
       var specLogFile = this.fileSystem.File.ReadAllText(pathToSpecLogFile);
 
       Image newLogo;

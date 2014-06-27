@@ -27,5 +27,15 @@ namespace SpecLogLogoReplacer.Tests.ViewModel
       var transformer = new SpecLogTransformer(new MockFileSystem());
       return transformer;
     }
+
+    [Test]
+    public void Transform_NullPathToLogoFile_ThrowsArgumentNullExceptionForPathToSpecLogFile()
+    {
+      var transformer = CreateSpecLogTransformer();
+
+      Check.ThatCode(() => transformer.Transform(@"c:\speclog.html", null))
+        .Throws<ArgumentNullException>()
+        .WithProperty("ParamName", "pathToLogo");
+    }
   }
 }
