@@ -74,5 +74,21 @@ namespace SpecLogLogoReplacer.Tests.ViewModel
       Check.ThatCode(() => transformer.Transform(@"c:\speclog.html""", @"c:\logo.png"))
         .DoesNotThrow();
     }
+
+    [Test]
+    public void Transform_PathToSpecLogFileContainsQuoteOnly_ShouldThrowFileNotFoundException()
+    {
+      var transformer = CreateSpecLogTransformer();
+
+      Check.ThatCode(() => transformer.Transform(@"""", @"c:\logo.png")).Throws<System.IO.FileNotFoundException>();
+    }
+
+    [Test]
+    public void Transform_PathToSpecLogFileContainsTwoQuotesOnly_ShouldThrowFileNotFoundException()
+    {
+      var transformer = CreateSpecLogTransformer();
+
+      Check.ThatCode(() => transformer.Transform(@"""""", @"c:\logo.png")).Throws<System.IO.FileNotFoundException>();
+    }
   }
 }
