@@ -35,6 +35,11 @@ namespace SpecLogLogoReplacer.UI
         SpecRunLogoSequence, 
         string.Format(CustomLogoFormatString, ConvertBitmapToBase64(newLogo, imageFormat)));
 
+      if (htmlFile.Equals(result, StringComparison.InvariantCultureIgnoreCase))
+      {
+        throw new ArgumentOutOfRangeException(htmlFile, "The SpecLog Exported Html file did not contain the default SpecLog logo. Did you replace it already?");
+      }
+
       return result;
     }
 
