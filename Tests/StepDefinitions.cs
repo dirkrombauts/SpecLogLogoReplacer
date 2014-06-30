@@ -43,7 +43,14 @@ namespace SpecLogLogoReplacer.Tests
           }
       }
 
-      this.htmlFile = new LogoReplacer().Replace(this.htmlFile, newLogo, ImageFormat.Png);
+      try
+      {
+        this.htmlFile = new LogoReplacer().Replace(this.htmlFile, newLogo, ImageFormat.Png);
+      }
+      catch (Exception exception)
+      {
+        this.messageToUser = exception.Message;
+      }
     }
 
     [Then(@"the html file should contain")]
@@ -55,7 +62,7 @@ namespace SpecLogLogoReplacer.Tests
     [Then(@"I should see a message saying")]
     public void ThenIShouldSeeAMessageSaying(string expectedMessage)
     {
-      Check.That(this.messageToUser).IsEqualTo(expectedMessage);
+      Check.That(this.messageToUser).StartsWith(expectedMessage);
     }
   }
 }
