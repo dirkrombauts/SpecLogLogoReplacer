@@ -164,12 +164,19 @@ namespace SpecLogLogoReplacer.UI.ViewModel
           this.PathToSpecLogFile = settings.PathToSpecLogHtmlFile;
         }
 
-        private void DoTransform()
+      private void DoTransform()
+      {
+        try
         {
-            this.specLogTransformer.Transform(this.PathToSpecLogFile, this.PathToLogo);
+          this.specLogTransformer.Transform(this.PathToSpecLogFile, this.PathToLogo);
 
           this.Feedback = "done.";
         }
+        catch (ArgumentOutOfRangeException exception)
+        {
+          this.Feedback = exception.Message;
+        }
+    }
 
         private void DoBrowseForSpecLogCommand()
         {
