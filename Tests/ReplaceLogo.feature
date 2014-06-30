@@ -17,7 +17,7 @@ Scenario: Replacing the logo
                   </div>
       """
 
-
+@ignore
 Scenario: The Html file contains a different logo - the html file should not be changed
   Given I have the html file exported from SpecLog contains
       """

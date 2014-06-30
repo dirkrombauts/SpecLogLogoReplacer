@@ -300,9 +300,11 @@ this.ScenarioSetup(scenarioInfo);
         
         [NUnit.Framework.TestAttribute()]
         [NUnit.Framework.DescriptionAttribute("The Html file contains a different logo - the html file should not be changed")]
+        [NUnit.Framework.IgnoreAttribute()]
         public virtual void TheHtmlFileContainsADifferentLogo_TheHtmlFileShouldNotBeChanged()
         {
-            TechTalk.SpecFlow.ScenarioInfo scenarioInfo = new TechTalk.SpecFlow.ScenarioInfo("The Html file contains a different logo - the html file should not be changed", ((string[])(null)));
+            TechTalk.SpecFlow.ScenarioInfo scenarioInfo = new TechTalk.SpecFlow.ScenarioInfo("The Html file contains a different logo - the html file should not be changed", new string[] {
+                        "ignore"});
 #line 21
 this.ScenarioSetup(scenarioInfo);
 #line hidden
