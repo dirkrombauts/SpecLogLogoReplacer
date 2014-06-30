@@ -86,7 +86,7 @@ namespace SpecLogLogoReplacer.Tests
       var logoReplacer = CreateLogoReplacer();
 
       Check.ThatCode(() => logoReplacer.Replace("", Resources.logo, ImageFormat.Png))
-        .Throws<ArgumentOutOfRangeException>()
+        .Throws<ArgumentException>()
         .WithMessage("The SpecLog Exported Html file did not contain the default SpecLog logo. Did you replace it already?");
     }
   }

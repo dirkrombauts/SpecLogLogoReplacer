@@ -39,7 +39,7 @@ namespace SpecLogLogoReplacer.UI
 
       if (htmlFile.Equals(result, StringComparison.InvariantCultureIgnoreCase))
       {
-        throw new ArgumentOutOfRangeException(htmlFile, Resources.LogoReplacer_Replace_The_SpecLog_Exported_Html_file_did_not_contain_the_default_SpecLog_logo__Did_you_replace_it_already_);
+        throw new ArgumentException(Resources.LogoReplacer_Replace_The_SpecLog_Exported_Html_file_did_not_contain_the_default_SpecLog_logo__Did_you_replace_it_already_);
       }
 
       return result;

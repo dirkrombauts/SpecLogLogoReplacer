@@ -172,7 +172,7 @@ namespace SpecLogLogoReplacer.UI.ViewModel
 
           this.Feedback = "done.";
         }
-        catch (ArgumentOutOfRangeException exception)
+        catch (ArgumentException exception)
         {
           this.Feedback = exception.Message;
         }
