@@ -59,5 +59,15 @@ namespace SpecLogLogoReplacer.UI.Properties {
                 resourceCulture = value;
             }
         }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to The SpecLog Exported Html file did not contain the default SpecLog logo. Did you replace it already?.
+        /// </summary>
+        internal static string LogoReplacer_Replace_The_SpecLog_Exported_Html_file_did_not_contain_the_default_SpecLog_logo__Did_you_replace_it_already_ {
+            get {
+                return ResourceManager.GetString("LogoReplacer_Replace_The_SpecLog_Exported_Html_file_did_not_contain_the_default_S" +
+                        "pecLog_logo__Did_you_replace_it_already_", resourceCulture);
+            }
+        }
     }
 }

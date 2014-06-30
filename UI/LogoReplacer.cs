@@ -3,6 +3,8 @@ using System.Drawing;
 using System.Drawing.Imaging;
 using System.IO;
 
+using SpecLogLogoReplacer.UI.Properties;
+
 namespace SpecLogLogoReplacer.UI
 {
   public class LogoReplacer
@@ -37,7 +39,7 @@ namespace SpecLogLogoReplacer.UI
 
       if (htmlFile.Equals(result, StringComparison.InvariantCultureIgnoreCase))
       {
-        throw new ArgumentOutOfRangeException(htmlFile, "The SpecLog Exported Html file did not contain the default SpecLog logo. Did you replace it already?");
+        throw new ArgumentOutOfRangeException(htmlFile, Resources.LogoReplacer_Replace_The_SpecLog_Exported_Html_file_did_not_contain_the_default_SpecLog_logo__Did_you_replace_it_already_);
       }
 
       return result;

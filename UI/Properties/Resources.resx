@@ -114,4 +114,7 @@
   <resheader name="writer">
     <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </resheader>
+  <data name="LogoReplacer_Replace_The_SpecLog_Exported_Html_file_did_not_contain_the_default_SpecLog_logo__Did_you_replace_it_already_" xml:space="preserve">
+    <value>The SpecLog Exported Html file did not contain the default SpecLog logo. Did you replace it already?</value>
+  </data>
 </root>
