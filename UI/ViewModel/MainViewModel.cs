@@ -131,30 +131,29 @@ namespace SpecLogLogoReplacer.UI.ViewModel
           this.PathToSpecLogFile = settings.PathToSpecLogHtmlFile;
         }
 
-      private void DoTransform()
-      {
-        this.specLogTransformer.Transform(this.PathToSpecLogFile, this.PathToLogo);
-      }
-
-      private void DoBrowseForSpecLogCommand()
-      {
-        string pathToSpecLog = this.dialogServices.BrowseForFile("*.html");
-
-        if (!string.IsNullOrWhiteSpace(pathToSpecLog))
+        private void DoTransform()
         {
-          this.PathToSpecLogFile = pathToSpecLog;
+            this.specLogTransformer.Transform(this.PathToSpecLogFile, this.PathToLogo);
         }
-      }
 
-      private void DoBrowseForLogoCommand()
-      {
-        string pathToNewLogo = this.dialogServices.BrowseForFile("*.png");
-
-        if (!string.IsNullOrWhiteSpace(pathToNewLogo))
+        private void DoBrowseForSpecLogCommand()
         {
-          this.PathToLogo = pathToNewLogo;
-        }
-      }
+            string pathToSpecLog = this.dialogServices.BrowseForFile("*.html");
 
+            if (!string.IsNullOrWhiteSpace(pathToSpecLog))
+            {
+                this.PathToSpecLogFile = pathToSpecLog;
+            }
+        }
+
+        private void DoBrowseForLogoCommand()
+        {
+            string pathToNewLogo = this.dialogServices.BrowseForFile("*.png");
+
+            if (!string.IsNullOrWhiteSpace(pathToNewLogo))
+            {
+                this.PathToLogo = pathToNewLogo;
+            }
+        }
     }
 }
