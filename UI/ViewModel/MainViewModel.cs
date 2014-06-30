@@ -1,3 +1,4 @@
+using System;
 using GalaSoft.MvvmLight;
 using GalaSoft.MvvmLight.Command;
 
@@ -9,6 +10,7 @@ namespace SpecLogLogoReplacer.UI.ViewModel
     public class MainViewModel : ViewModelBase
     {
         private readonly ISpecLogTransformer specLogTransformer;
+        private readonly IDialogServices dialogServices;
 
         /// <summary>
         /// Initializes a new instance of the MainViewModel class.
@@ -16,7 +18,10 @@ namespace SpecLogLogoReplacer.UI.ViewModel
         public MainViewModel()
         {
           this.specLogTransformer = new SpecLogTransformer();
+          this.dialogServices = new WpfDialogServices();
           this.transformCommand = new RelayCommand(DoTransform);
+          this.browseForSpecLogCommand = new RelayCommand(DoBrowseForSpecLogCommand);
+          this.browseForLogoCommand = new RelayCommand(DoBrowseForLogoCommand);
         }
 
         /// <summary>
@@ -94,6 +99,27 @@ namespace SpecLogLogoReplacer.UI.ViewModel
           }
         }
 
+        private readonly RelayCommand browseForSpecLogCommand;
+
+        public RelayCommand BrowseForSpecLog
+        {
+          get
+          {
+            return browseForSpecLogCommand;
+          }
+        }
+
+        private readonly RelayCommand browseForLogoCommand;
+
+        public RelayCommand BrowseForLogo
+        {
+          get
+          {
+            return browseForLogoCommand;
+          }
+        }
+
+
         public Settings GetSettings()
         {
           return new Settings { PathToLogo = this.PathToLogo, PathToSpecLogHtmlFile = this.PathToSpecLogFile };
@@ -109,5 +135,26 @@ namespace SpecLogLogoReplacer.UI.ViewModel
       {
         this.specLogTransformer.Transform(this.PathToSpecLogFile, this.PathToLogo);
       }
+
+      private void DoBrowseForSpecLogCommand()
+      {
+        string pathToSpecLog = this.dialogServices.BrowseForFile("*.html");
+
+        if (!string.IsNullOrWhiteSpace(pathToSpecLog))
+        {
+          this.PathToSpecLogFile = pathToSpecLog;
+        }
+      }
+
+      private void DoBrowseForLogoCommand()
+      {
+        string pathToNewLogo = this.dialogServices.BrowseForFile("*.png");
+
+        if (!string.IsNullOrWhiteSpace(pathToNewLogo))
+        {
+          this.PathToLogo = pathToNewLogo;
+        }
+      }
+
     }
 }

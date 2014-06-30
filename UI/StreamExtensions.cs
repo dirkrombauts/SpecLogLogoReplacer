@@ -18,9 +18,16 @@ namespace SpecLogLogoReplacer.UI
     {
       T result;
 
-      using (XmlReader reader = XmlReader.Create(stream))
+      try
       {
-        result = (T)new DataContractSerializer(typeof(T)).ReadObject(reader);
+        using (XmlReader reader = XmlReader.Create(stream))
+        {
+          result = (T)new DataContractSerializer(typeof(T)).ReadObject(reader);
+        }
+      }
+      catch (SerializationException)
+      {
+        result = default(T);
       }
 
       return result;

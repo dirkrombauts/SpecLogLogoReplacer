@@ -33,9 +33,9 @@ namespace SpecLogLogoReplacer.UI
     {
       var pathToSettingsFile = DeterminePathToSettingsFile();
 
-      var settings = this.fileSystem.File.Exists(pathToSettingsFile) ? this.settingsManager.LoadSettings(pathToSettingsFile) : new Settings();
+      var settings = this.fileSystem.File.Exists(pathToSettingsFile) ? this.settingsManager.LoadSettings(pathToSettingsFile) : null;
 
-      this.ViewModel.SetSettings(settings);
+      this.ViewModel.SetSettings(settings ?? new Settings());
     }
 
     private string DeterminePathToSettingsFile()
