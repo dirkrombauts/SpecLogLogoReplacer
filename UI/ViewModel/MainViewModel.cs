@@ -1,4 +1,6 @@
 using System;
+using System.Security.Cryptography.X509Certificates;
+
 using GalaSoft.MvvmLight;
 using GalaSoft.MvvmLight.Command;
 
@@ -119,6 +121,37 @@ namespace SpecLogLogoReplacer.UI.ViewModel
           }
         }
 
+        /// <summary>
+        /// The <see cref="Feedback" /> property's name.
+        /// </summary>
+        public const string FeedbackPropertyName = "Feedback";
+
+        private string feedback = "";
+
+        /// <summary>
+        /// Sets and gets the Feedback property.
+        /// Changes to that property's value raise the PropertyChanged event. 
+        /// </summary>
+        public string Feedback
+        {
+          get
+          {
+            return feedback;
+          }
+
+          set
+          {
+            if (feedback == value)
+            {
+              return;
+            }
+
+            RaisePropertyChanging(FeedbackPropertyName);
+            feedback = value;
+            RaisePropertyChanged(FeedbackPropertyName);
+          }
+        }
+
 
         public Settings GetSettings()
         {
@@ -134,6 +167,8 @@ namespace SpecLogLogoReplacer.UI.ViewModel
         private void DoTransform()
         {
             this.specLogTransformer.Transform(this.PathToSpecLogFile, this.PathToLogo);
+
+          this.Feedback = "done.";
         }
 
         private void DoBrowseForSpecLogCommand()
