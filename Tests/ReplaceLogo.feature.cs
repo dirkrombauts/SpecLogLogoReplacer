@@ -297,6 +297,35 @@ this.ScenarioSetup(scenarioInfo);
 #line hidden
             this.ScenarioCleanup();
         }
+        
+        [NUnit.Framework.TestAttribute()]
+        [NUnit.Framework.DescriptionAttribute("The Html file contains a different logo - the html file should not be changed")]
+        public virtual void TheHtmlFileContainsADifferentLogo_TheHtmlFileShouldNotBeChanged()
+        {
+            TechTalk.SpecFlow.ScenarioInfo scenarioInfo = new TechTalk.SpecFlow.ScenarioInfo("The Html file contains a different logo - the html file should not be changed", ((string[])(null)));
+#line 21
+this.ScenarioSetup(scenarioInfo);
+#line hidden
+#line 22
+  testRunner.Given("I have the html file exported from SpecLog contains", "            <div class=\"logo\">\r\n                <a href=\"http://www.speclog.net/\"" +
+                    ">\r\n                    <img title=\"Visit SpecLog.net\" alt=\"SpecLog logo\" src=\"da" +
+                    "ta:image/png;base64,something else\" />\r\n                </a>\r\n            </div>" +
+                    "", ((TechTalk.SpecFlow.Table)(null)), "Given ");
+#line 30
+  testRunner.When("I replace the logo with file \'logo.png\'", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
+#line hidden
+#line 31
+  testRunner.Then("the html file should contain", "            <div class=\"logo\">\r\n                <a href=\"http://www.speclog.net/\"" +
+                    ">\r\n                    <img title=\"Visit SpecLog.net\" alt=\"SpecLog logo\" src=\"da" +
+                    "ta:image/png;base64,something else\" />\r\n                </a>\r\n            </div>" +
+                    "", ((TechTalk.SpecFlow.Table)(null)), "Then ");
+#line hidden
+#line 39
+  testRunner.And("I should see a message saying", "The SpecLog Exported Html file did not contain the default SpecLog logo. Did you " +
+                    "replace it already?", ((TechTalk.SpecFlow.Table)(null)), "And ");
+#line hidden
+            this.ScenarioCleanup();
+        }
     }
 }
 #pragma warning restore

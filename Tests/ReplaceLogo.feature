@@ -17,3 +17,26 @@ Scenario: Replacing the logo
                   </div>
       """
 
+
+Scenario: The Html file contains a different logo - the html file should not be changed
+  Given I have the html file exported from SpecLog contains
+      """
+                  <div class="logo">
+                      <a href="http://www.speclog.net/">
+                          <img title="Visit SpecLog.net" alt="SpecLog logo" src="data:image/png;base64,something else" />
+                      </a>
+                  </div>
+      """
+  When I replace the logo with file 'logo.png'
+  Then the html file should contain
+      """
+                  <div class="logo">
+                      <a href="http://www.speclog.net/">
+                          <img title="Visit SpecLog.net" alt="SpecLog logo" src="data:image/png;base64,something else" />
+                      </a>
+                  </div>
+      """
+  And I should see a message saying
+    """
+    The SpecLog Exported Html file did not contain the default SpecLog logo. Did you replace it already?
+    """

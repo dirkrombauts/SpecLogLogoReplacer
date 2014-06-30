@@ -16,6 +16,8 @@ namespace SpecLogLogoReplacer.Tests
   {
     private string htmlFile;
 
+    private string messageToUser;
+
     [Given(@"I have the html file exported from SpecLog contains")]
     public void GivenIHaveTheHtmlFileExportedFromSpecLogContains(string multilineText)
     {
@@ -48,6 +50,12 @@ namespace SpecLogLogoReplacer.Tests
     public void ThenTheHtmlFileShouldContain(string multilineText)
     {
       Check.That(this.htmlFile).Contains(multilineText);
+    }
+
+    [Then(@"I should see a message saying")]
+    public void ThenIShouldSeeAMessageSaying(string expectedMessage)
+    {
+      Check.That(this.messageToUser).IsEqualTo(expectedMessage);
     }
   }
 }
