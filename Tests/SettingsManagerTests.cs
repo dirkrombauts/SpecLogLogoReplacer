@@ -1,13 +1,13 @@
 ﻿using System;
 using System.IO.Abstractions.TestingHelpers;
 
+using Aim.SpecLogLogoReplacer.UI;
+
 using NFluent;
 
 using NUnit.Framework;
 
-using SpecLogLogoReplacer.UI;
-
-namespace SpecLogLogoReplacer.Tests
+namespace Aim.SpecLogLogoReplacer.Tests
 {
   [TestFixture]
   public class SettingsManagerTests

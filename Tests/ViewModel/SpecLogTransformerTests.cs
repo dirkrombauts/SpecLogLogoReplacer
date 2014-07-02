@@ -2,15 +2,15 @@
 using System.Drawing.Imaging;
 using System.IO.Abstractions.TestingHelpers;
 
+using Aim.SpecLogLogoReplacer.Tests.Properties;
+using Aim.SpecLogLogoReplacer.UI;
+using Aim.SpecLogLogoReplacer.UI.ViewModel;
+
 using NFluent;
 
 using NUnit.Framework;
 
-using SpecLogLogoReplacer.Tests.Properties;
-using SpecLogLogoReplacer.UI;
-using SpecLogLogoReplacer.UI.ViewModel;
-
-namespace SpecLogLogoReplacer.Tests.ViewModel
+namespace Aim.SpecLogLogoReplacer.Tests.ViewModel
 {
   [TestFixture]
   public class SpecLogTransformerTests

@@ -2,7 +2,7 @@ using System;
 
 using Ookii.Dialogs.Wpf;
 
-namespace SpecLogLogoReplacer.UI.ViewModel
+namespace Aim.SpecLogLogoReplacer.UI.ViewModel
 {
   public class WpfDialogServices : IDialogServices
   {

@@ -1,7 +1,7 @@
 ﻿using System;
 using System.Windows;
 
-namespace SpecLogLogoReplacer.UI
+namespace Aim.SpecLogLogoReplacer.UI
 {
   /// <summary>
   /// Interaction logic for App.xaml

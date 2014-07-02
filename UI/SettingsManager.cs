@@ -1,7 +1,7 @@
 ﻿using System;
 using System.IO.Abstractions;
 
-namespace SpecLogLogoReplacer.UI
+namespace Aim.SpecLogLogoReplacer.UI
 {
   public class SettingsManager
   {

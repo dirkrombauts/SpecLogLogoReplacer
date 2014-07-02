@@ -2,7 +2,7 @@
 using System.Runtime.Serialization;
 using System.Xml;
 
-namespace SpecLogLogoReplacer.UI
+namespace Aim.SpecLogLogoReplacer.UI
 {
   internal static class StreamExtensions
   {

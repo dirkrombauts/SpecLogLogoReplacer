@@ -1,14 +1,14 @@
 ﻿using System;
 using System.Drawing.Imaging;
 
+using Aim.SpecLogLogoReplacer.Tests.Properties;
+using Aim.SpecLogLogoReplacer.UI;
+
 using NFluent;
 
 using NUnit.Framework;
 
-using SpecLogLogoReplacer.Tests.Properties;
-using SpecLogLogoReplacer.UI;
-
-namespace SpecLogLogoReplacer.Tests
+namespace Aim.SpecLogLogoReplacer.Tests
 {
   [TestFixture]
   public class LogoReplacerTests

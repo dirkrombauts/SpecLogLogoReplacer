@@ -6,8 +6,8 @@
     <ProjectGuid>{39508F8C-FE1A-4965-AEE9-C8D90FD39F23}</ProjectGuid>
     <OutputType>Library</OutputType>
     <AppDesignerFolder>Properties</AppDesignerFolder>
-    <RootNamespace>SpecLogLogoReplacer.Tests</RootNamespace>
-    <AssemblyName>SpecLogLogoReplacer.Tests</AssemblyName>
+    <RootNamespace>Aim.SpecLogLogoReplacer.Tests</RootNamespace>
+    <AssemblyName>Aim.SpecLogLogoReplacer.Tests</AssemblyName>
     <TargetFrameworkVersion>v4.5.1</TargetFrameworkVersion>
     <FileAlignment>512</FileAlignment>
     <ProjectTypeGuids>{3AC096D0-A1C2-E12C-1390-A8335801FDAB};{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}</ProjectTypeGuids>

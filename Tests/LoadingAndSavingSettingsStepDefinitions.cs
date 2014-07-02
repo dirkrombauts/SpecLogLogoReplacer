@@ -1,13 +1,13 @@
-﻿using System.IO.Abstractions;
+﻿using System;
 using System.IO.Abstractions.TestingHelpers;
+
+using Aim.SpecLogLogoReplacer.UI;
 
 using NFluent;
 
-using SpecLogLogoReplacer.UI;
-
 using TechTalk.SpecFlow;
 
-namespace SpecLogLogoReplacer.Tests
+namespace Aim.SpecLogLogoReplacer.Tests
 {
   [Binding]
   public class LoadingAndSavingSettingsStepDefinitions

@@ -11,7 +11,7 @@
 // ------------------------------------------------------------------------------
 #region Designer generated code
 #pragma warning disable
-namespace SpecLogLogoReplacer.Tests
+namespace Aim.SpecLogLogoReplacer.Tests
 {
     using TechTalk.SpecFlow;
     

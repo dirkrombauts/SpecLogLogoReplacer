@@ -2,14 +2,14 @@
 using System.Drawing;
 using System.Drawing.Imaging;
 
-using NFluent;
+using Aim.SpecLogLogoReplacer.Tests.Properties;
+using Aim.SpecLogLogoReplacer.UI;
 
-using SpecLogLogoReplacer.Tests.Properties;
-using SpecLogLogoReplacer.UI;
+using NFluent;
 
 using TechTalk.SpecFlow;
 
-namespace SpecLogLogoReplacer.Tests
+namespace Aim.SpecLogLogoReplacer.Tests
 {
   [Binding]
   public class StepDefinitions

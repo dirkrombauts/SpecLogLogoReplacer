@@ -3,7 +3,7 @@ using System.Drawing;
 using System.Drawing.Imaging;
 using System.IO.Abstractions;
 
-namespace SpecLogLogoReplacer.UI.ViewModel
+namespace Aim.SpecLogLogoReplacer.UI.ViewModel
 {
   public class SpecLogTransformer : ISpecLogTransformer
   {

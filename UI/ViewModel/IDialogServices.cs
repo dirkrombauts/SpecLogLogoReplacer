@@ -1,6 +1,6 @@
 using System;
 
-namespace SpecLogLogoReplacer.UI.ViewModel
+namespace Aim.SpecLogLogoReplacer.UI.ViewModel
 {
   internal interface IDialogServices
   {

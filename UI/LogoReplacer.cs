@@ -3,9 +3,9 @@ using System.Drawing;
 using System.Drawing.Imaging;
 using System.IO;
 
-using SpecLogLogoReplacer.UI.Properties;
+using Aim.SpecLogLogoReplacer.UI.Properties;
 
-namespace SpecLogLogoReplacer.UI
+namespace Aim.SpecLogLogoReplacer.UI
 {
   public class LogoReplacer
   {

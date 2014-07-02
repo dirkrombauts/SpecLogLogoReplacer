@@ -1,7 +1,7 @@
 using System;
 using System.Runtime.Serialization;
 
-namespace SpecLogLogoReplacer.UI
+namespace Aim.SpecLogLogoReplacer.UI
 {
   [DataContract(Name = "specLogLogoReplacer", Namespace = "")]
   public class Settings

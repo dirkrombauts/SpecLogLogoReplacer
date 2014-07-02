@@ -3,9 +3,9 @@ using System.IO.Abstractions;
 using System.Reflection;
 using System.Windows;
 
-using SpecLogLogoReplacer.UI.ViewModel;
+using Aim.SpecLogLogoReplacer.UI.ViewModel;
 
-namespace SpecLogLogoReplacer.UI
+namespace Aim.SpecLogLogoReplacer.UI
 {
   public partial class MainWindow
   {

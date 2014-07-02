@@ -1,10 +1,9 @@
 using System;
-using System.Security.Cryptography.X509Certificates;
 
 using GalaSoft.MvvmLight;
 using GalaSoft.MvvmLight.Command;
 
-namespace SpecLogLogoReplacer.UI.ViewModel
+namespace Aim.SpecLogLogoReplacer.UI.ViewModel
 {
     /// <summary>
     /// This class contains properties that the main View can data bind to.
