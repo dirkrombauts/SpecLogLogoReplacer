@@ -9,7 +9,7 @@ namespace Aim.SpecLogLogoReplacer.UI
     [DataMember(Name = "pathToSpecLogHtmlFile")]
     public string PathToSpecLogHtmlFile { get; set; }
 
-    [DataMember(Name = "pathToSpecLogo")]
+    [DataMember(Name = "pathToLogo")]
     public string PathToLogo { get; set; }
   }
 }
