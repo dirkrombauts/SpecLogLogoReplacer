@@ -19,6 +19,8 @@ namespace Aim.SpecLogLogoReplacer.UI
       if (string.IsNullOrWhiteSpace(path)) throw new ArgumentNullException("path");
       if (settings == null) throw new ArgumentNullException("settings");
 
+      this.fileSystem.File.Delete(path);
+
       using (var stream = this.fileSystem.File.OpenWrite(path))
       {
         stream.Serialize<Settings>(settings);
