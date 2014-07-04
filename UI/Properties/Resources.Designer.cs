@@ -61,6 +61,16 @@ namespace Aim.SpecLogLogoReplacer.UI.Properties {
         }
         
         /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap aim {
+            get {
+                object obj = ResourceManager.GetObject("aim", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to The SpecLog Exported Html file did not contain the default SpecLog logo. Did you replace it already?.
         /// </summary>
         internal static string LogoReplacer_Replace_The_SpecLog_Exported_Html_file_did_not_contain_the_default_SpecLog_logo__Did_you_replace_it_already_ {

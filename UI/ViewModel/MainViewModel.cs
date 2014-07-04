@@ -1,4 +1,5 @@
 using System;
+using System.Diagnostics;
 
 using GalaSoft.MvvmLight;
 using GalaSoft.MvvmLight.Command;
@@ -23,6 +24,7 @@ namespace Aim.SpecLogLogoReplacer.UI.ViewModel
           this.transformCommand = new RelayCommand(DoTransform);
           this.browseForSpecLogCommand = new RelayCommand(DoBrowseForSpecLogCommand);
           this.browseForLogoCommand = new RelayCommand(DoBrowseForLogoCommand);
+          this.navigateToAim = new RelayCommand(() => Process.Start("http://www.aimsoftware.com/"));
         }
 
         /// <summary>
@@ -117,6 +119,16 @@ namespace Aim.SpecLogLogoReplacer.UI.ViewModel
           get
           {
             return browseForLogoCommand;
+          }
+        }
+
+        private readonly RelayCommand navigateToAim;
+
+        public RelayCommand NavigateToAim
+        {
+          get
+          {
+            return navigateToAim;
           }
         }
 

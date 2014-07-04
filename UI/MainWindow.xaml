@@ -23,13 +23,24 @@
     <TextBox Grid.Row="0" Grid.Column="1" Text="{Binding Path=PathToSpecLogFile}" />
     <Button Grid.Row="0" Grid.Column="2" Command="{Binding Path=BrowseForSpecLog}">...</Button>
     
-    <Label Grid.Row="1" Grid.Column="0">Path to logo of your company:</Label>
+    <Label Grid.Row="1" Grid.Column="0">Path to new logo:</Label>
     <TextBox Grid.Row="1" Grid.Column="1" Text="{Binding Path=PathToLogo}" />
     <Button Grid.Row="1" Grid.Column="2" Command="{Binding Path=BrowseForLogo}">...</Button>
     <Label Grid.Row="2" Grid.Column="1">Supported image types: .png</Label>
     
-    <TextBlock Grid.Row="3" Grid.Column="1" Text="{Binding Path=Feedback}" TextWrapping="Wrap" />
+    <StackPanel Grid.Row="4" Grid.Column="0" Orientation="Vertical" VerticalAlignment="Bottom" Margin="0,0,0,12">
+      <Label>Provided by</Label>
+      <Button Cursor="Hand" Command="{Binding Path=NavigateToAim}">
+        <Button.Template>
+          <ControlTemplate TargetType="Button">
+            <Image Source="./Resources/aim.png"></Image>
+          </ControlTemplate>
+        </Button.Template>
+        </Button>
+    </StackPanel>
     
-    <Button Grid.Row="4" Command="{Binding Path=Transform}" Grid.Column="1" Grid.ColumnSpan="2" Height="Auto" Width="Auto" HorizontalAlignment="Right" VerticalAlignment="Bottom" Margin="0,0,10,10">Transform!</Button>
+    <TextBlock Grid.Row="3" Grid.Column="1" Text="{Binding Path=Feedback}" TextWrapping="Wrap" Margin="5" />
+    
+    <Button Grid.Row="4" Command="{Binding Path=Transform}" Grid.Column="1" Grid.ColumnSpan="1" Height="Auto" Width="Auto" HorizontalAlignment="Right" VerticalAlignment="Bottom" Margin="0,0,0,10">Transform!</Button>
   </Grid>
 </controls:MetroWindow>
