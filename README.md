@@ -8,4 +8,6 @@ SpecLog Logo Replacer enables you to have your own logo in the exported file:
 
 SpecLog Logo Replacer is licensed under a [BSD license](LICENSE.md).
 
-*Neither AIM Software GmbH nor SpecLogLogoReplacer are endorsed by or affiliated with SpecFlow in any way.*
+Provided by [![AIM Software GmbH](./aim.png)](http://www.aimsoftware.com/).
+
+*Neither AIM Software GmbH nor SpecLogLogoReplacer are endorsed by or affiliated with SpecLog, SpecFlow or TechTalk in any way.*
