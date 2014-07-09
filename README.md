@@ -2,7 +2,7 @@
 
 ![](./before.png)
 
-SpecLog Logo Replacer enables you to have your own logo in the exported file:
+SpecLog Logo Replacer enables you to put your own logo into the exported file:
 
 ![](./after.png)
 
