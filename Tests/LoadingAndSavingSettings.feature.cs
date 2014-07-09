@@ -74,9 +74,9 @@ this.ScenarioSetup(scenarioInfo);
 #line hidden
 #line 4
   testRunner.Given("the settings file consists of", "<?xml version=\"1.0\" encoding=\"utf-8\"?>\r\n<specLogLogoReplacer xmlns:i=\"http://www." +
-                    "w3.org/2001/XMLSchema-instance\">\r\n  <pathToSpecLogHtmlFile>c:\\speclog.html</path" +
-                    "ToSpecLogHtmlFile>\r\n  <pathToSpecLogo>c:\\logo.png</pathToSpecLogo>\r\n</specLogLog" +
-                    "oReplacer>", ((TechTalk.SpecFlow.Table)(null)), "Given ");
+                    "w3.org/2001/XMLSchema-instance\">\r\n  <pathToLogo>c:\\logo.png</pathToLogo>\r\n  <pat" +
+                    "hToSpecLogHtmlFile>c:\\speclog.html</pathToSpecLogHtmlFile>\r\n</specLogLogoReplace" +
+                    "r>", ((TechTalk.SpecFlow.Table)(null)), "Given ");
 #line 12
   testRunner.When("I load the settings", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
 #line hidden
@@ -113,9 +113,9 @@ this.ScenarioSetup(scenarioInfo);
 #line hidden
 #line 22
   testRunner.Then("the settings file consists of", "<?xml version=\"1.0\" encoding=\"utf-8\"?>\r\n<specLogLogoReplacer xmlns:i=\"http://www." +
-                    "w3.org/2001/XMLSchema-instance\">\r\n  <pathToSpecLogHtmlFile>c:\\speclog.html</path" +
-                    "ToSpecLogHtmlFile>\r\n  <pathToSpecLogo>c:\\logo.png</pathToSpecLogo>\r\n</specLogLog" +
-                    "oReplacer>", ((TechTalk.SpecFlow.Table)(null)), "Then ");
+                    "w3.org/2001/XMLSchema-instance\">\r\n  <pathToLogo>c:\\logo.png</pathToLogo>\r\n  <pat" +
+                    "hToSpecLogHtmlFile>c:\\speclog.html</pathToSpecLogHtmlFile>\r\n</specLogLogoReplace" +
+                    "r>", ((TechTalk.SpecFlow.Table)(null)), "Then ");
 #line hidden
             this.ScenarioCleanup();
         }
