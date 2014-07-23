@@ -2,11 +2,12 @@
         xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
         xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
         xmlns:controls="clr-namespace:MahApps.Metro.Controls;assembly=MahApps.Metro"
-        Title="SpecLog Logo Replacer" Height="350" Width="525"
+        Title="SpecLog Logo Replacer" Height="480" Width="640"
         DataContext="{Binding Main, Source={StaticResource Locator}}"
                       Loaded="MainWindow_OnLoaded" Closed="MainWindow_OnClosed">
-  <Grid>
+  <Grid Margin="20">
     <Grid.RowDefinitions>
+      <RowDefinition Height="Auto" />
       <RowDefinition Height="Auto" />
       <RowDefinition Height="Auto" />
       <RowDefinition Height="Auto" />
@@ -16,31 +17,32 @@
     <Grid.ColumnDefinitions>
       <ColumnDefinition Width="Auto" />
       <ColumnDefinition />
-      <ColumnDefinition Width="Auto" />
+      <ColumnDefinition Width="25" />
     </Grid.ColumnDefinitions>
-    
-    <Label>Path to exported html file:</Label>
-    <TextBox Grid.Row="0" Grid.Column="1" Text="{Binding Path=PathToSpecLogFile}" />
-    <Button Grid.Row="0" Grid.Column="2" Command="{Binding Path=BrowseForSpecLog}">...</Button>
+
+    <Label Grid.Row="0" Grid.Column="0">Path to exported HTML file:</Label>
+        <TextBox Grid.Row="0" Grid.Column="1" Margin="0,0,0,10" Text="{Binding Path=PathToSpecLogFile}" />
+        <Button Grid.Row="0" Grid.Column="2" Margin="0,0,0,10" Command="{Binding Path=BrowseForSpecLog}">...</Button>
     
     <Label Grid.Row="1" Grid.Column="0">Path to new logo:</Label>
-    <TextBox Grid.Row="1" Grid.Column="1" Text="{Binding Path=PathToLogo}" />
-    <Button Grid.Row="1" Grid.Column="2" Command="{Binding Path=BrowseForLogo}">...</Button>
+        <TextBox Grid.Row="1" Grid.Column="1" Margin="0,0,0,10" Text="{Binding Path=PathToLogo}" />
+        <Button Grid.Row="1" Grid.Column="2" Margin="0,0,0,10" Command="{Binding Path=BrowseForLogo}">...</Button>
     <Label Grid.Row="2" Grid.Column="1">Supported image types: .png</Label>
-    
-    <StackPanel Grid.Row="4" Grid.Column="0" Orientation="Vertical" VerticalAlignment="Bottom" Margin="0,0,0,12">
-      <Label>Provided by</Label>
+        <TextBlock Grid.Row="6" Grid.Column="0" Grid.ColumnSpan="3" TextWrapping="Wrap">SpecLog Logo Replacer is licensed under a BSD license. Neither AIM Advanced Information Management GmbH nor SpecLogLogoReplacer are endorsed by or affiliated with SpecLog, SpecFlow or TechTalk in any way.</TextBlock>
+
+        <StackPanel Grid.Row="4" Grid.Column="1" Grid.ColumnSpan="2" Orientation="Vertical" HorizontalAlignment="Right" VerticalAlignment="Bottom" Margin="0,0,0,12">
+      <Label>Provided by:</Label>
       <Button Cursor="Hand" Command="{Binding Path=NavigateToAim}">
         <Button.Template>
           <ControlTemplate TargetType="Button">
-            <Image Source="./Resources/aim.png"></Image>
+            <Image Height="55" Source="./Resources/aim.png"></Image>
           </ControlTemplate>
         </Button.Template>
         </Button>
     </StackPanel>
     
-    <TextBlock Grid.Row="3" Grid.Column="1" Text="{Binding Path=Feedback}" TextWrapping="Wrap" Margin="5" />
+    <TextBlock Grid.Row="4" Grid.Column="0" Text="{Binding Path=Feedback}" TextWrapping="Wrap" Margin="5" />
     
-    <Button Grid.Row="4" Command="{Binding Path=Transform}" Grid.Column="1" Grid.ColumnSpan="1" Height="Auto" Width="Auto" HorizontalAlignment="Right" VerticalAlignment="Bottom" Margin="0,0,0,10">Transform!</Button>
+    <Button Grid.Row="3" Command="{Binding Path=Transform}" Grid.Column="1" Grid.ColumnSpan="2" Height="Auto" Width="Auto" HorizontalAlignment="Right" VerticalAlignment="Bottom" Margin="0,0,0,10">Replace!</Button>
   </Grid>
 </controls:MetroWindow>
