@@ -56,7 +56,6 @@ namespace Aim.SpecLogLogoReplacer.Tests
     [Then(@"the html file should contain")]
     public void ThenTheHtmlFileShouldContain(string multilineText)
     {
-      Console.Out.WriteLine(System.Threading.Thread.CurrentThread.CurrentCulture);
       Check.That(this.htmlFile).Contains(multilineText);
     }
 
