@@ -2075,6 +2075,20 @@
             <param name="theBoolean">The Boolean.</param>
             <returns>A string that represents the current object with current culture ignore.</returns>
         </member>
+        <member name="M:NFluent.Extensions.ExtensionsCommonHelpers.ToStringProperlyFormated(System.Double)">
+            <summary>
+            Returns a string that represents the current double.         
+            </summary>
+            <param name="value">The value.</param>
+            <returns>A string that represents the current object with current culture ignore.</returns>
+        </member>
+        <member name="M:NFluent.Extensions.ExtensionsCommonHelpers.ToStringProperlyFormated(System.Single)">
+            <summary>
+            Returns a string that represents the current float.         
+            </summary>
+            <param name="value">The value.</param>
+            <returns>A string that represents the current object with current culture ignore.</returns>
+        </member>
         <member name="M:NFluent.Extensions.ExtensionsCommonHelpers.IsNullable(System.Type)">
             <summary>
             Determines whether the specified type is nullable.

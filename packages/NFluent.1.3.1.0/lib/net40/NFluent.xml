@@ -92,6 +92,18 @@
             Return <see cref="T:NFluent.RunTrace"/> describing the execution.
             </returns>
         </member>
+        <member name="M:NFluent.CodeCheckExtensions.GetAsyncTrace``1(System.Func{System.Threading.Tasks.Task{``0}})">
+            <summary>
+            Execute the function to capture the run.
+            </summary>
+            <typeparam name="TResult">Result type of the awaitable function.</typeparam>
+            <param name="awaitableFunction">
+            <see cref="T:System.Action"/> to be analyzed.
+            </param>
+            <returns>
+            Return <see cref="T:NFluent.RunTrace"/> describing the execution.
+            </returns>
+        </member>
         <member name="M:NFluent.CodeCheckExtensions.GetTrace``1(System.Func{``0})">
             <summary>
             Execute the function to capture the run.
@@ -1798,6 +1810,31 @@
             Every method of the returned <see cref="T:NFluent.ICheck`1"/> instance will throw a <see cref="T:NFluent.FluentCheckException"/> when failing.
             </remarks>
         </member>
+        <member name="M:NFluent.Check.ThatAsyncCode(System.Func{System.Threading.Tasks.Task})">
+            <summary>
+            Returns a <see cref="T:NFluent.ICheck`1"/> instance that will provide check methods to be executed on a given async code (returning Task).
+            </summary>
+            <param name="awaitableMethod">The async code to be tested.</param>
+            <returns>
+            A <see cref="T:NFluent.ICheck`1"/> instance to use in order to assert things on the given value.
+            </returns>
+            <remarks>
+            Every method of the returned <see cref="T:NFluent.ICheck`1"/> instance will throw a <see cref="T:NFluent.FluentCheckException"/> when failing.
+            </remarks>
+        </member>
+        <member name="M:NFluent.Check.ThatAsyncCode``1(System.Func{System.Threading.Tasks.Task{``0}})">
+            <summary>
+            Returns a <see cref="T:NFluent.ICheck`1"/> instance that will provide check methods to be executed on a given async function (returning Task{TResult}).
+            </summary>
+            <typeparam name="TResult">The type of the result for this asynchronous function.</typeparam>
+            <param name="awaitableFunction">The asynchronous function to be tested.</param>
+            <returns>
+            A <see cref="T:NFluent.ICheck`1"/> instance to use in order to assert things on the given value.
+            </returns>
+            <remarks>
+            Every method of the returned <see cref="T:NFluent.ICheck`1"/> instance will throw a <see cref="T:NFluent.FluentCheckException"/> when failing.
+            </remarks>
+        </member>
         <member name="M:NFluent.Check.That(System.Action)">
             <summary>
             Returns a <see cref="T:NFluent.ICheck`1"/> instance that will provide check methods to be executed on a given value.
@@ -2364,6 +2401,20 @@
             Returns a string that represents the current Boolean.         
             </summary>
             <param name="theBoolean">The Boolean.</param>
+            <returns>A string that represents the current object with current culture ignore.</returns>
+        </member>
+        <member name="M:NFluent.Extensions.ExtensionsCommonHelpers.ToStringProperlyFormated(System.Double)">
+            <summary>
+            Returns a string that represents the current double.         
+            </summary>
+            <param name="value">The value.</param>
+            <returns>A string that represents the current object with current culture ignore.</returns>
+        </member>
+        <member name="M:NFluent.Extensions.ExtensionsCommonHelpers.ToStringProperlyFormated(System.Single)">
+            <summary>
+            Returns a string that represents the current float.         
+            </summary>
+            <param name="value">The value.</param>
             <returns>A string that represents the current object with current culture ignore.</returns>
         </member>
         <member name="M:NFluent.Extensions.ExtensionsCommonHelpers.IsNullable(System.Type)">
