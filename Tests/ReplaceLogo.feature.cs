@@ -66,13 +66,15 @@ namespace Aim.SpecLogLogoReplacer.Tests
         
         [NUnit.Framework.TestAttribute()]
         [NUnit.Framework.DescriptionAttribute("Replacing the logo")]
+        [NUnit.Framework.CategoryAttribute("localOnly")]
         public virtual void ReplacingTheLogo()
         {
-            TechTalk.SpecFlow.ScenarioInfo scenarioInfo = new TechTalk.SpecFlow.ScenarioInfo("Replacing the logo", ((string[])(null)));
-#line 3
+            TechTalk.SpecFlow.ScenarioInfo scenarioInfo = new TechTalk.SpecFlow.ScenarioInfo("Replacing the logo", new string[] {
+                        "localOnly"});
+#line 4
 this.ScenarioSetup(scenarioInfo);
 #line hidden
-#line 4
+#line 5
   testRunner.Given("I have the html file exported from SpecLog contains", "            <div class=\"logo\">\r\n                <a href=\"http://www.speclog.net/\"" +
                     ">\r\n                    <img title=\"Visit SpecLog.net\" alt=\"SpecLog logo\" src=\"da" +
                     "ta:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAO4AAAA9CAIAAAAlJsL0AAAAGXRFWHRTb2Z0" +
@@ -247,10 +249,10 @@ this.ScenarioSetup(scenarioInfo);
                     "67+uaNroD9WoepgKwrmDZnfNHJxu1rT9EFnZQjN0M6LAdRXvh6KNvXKKp434I6QwPsfbav8OYNqj5Awv" +
                     "ukwSlXSzpu2HCWU7oNnmqiW7DqwZ2XNa14yTDlsPxIzWh2WkLW3fh/1/AQYAq/5GxtEuhlIAAAAASUVO" +
                     "RK5CYII=\" />\r\n                </a>\r\n            </div>", ((TechTalk.SpecFlow.Table)(null)), "Given ");
-#line 12
+#line 13
   testRunner.When("I replace the logo with file \'logo.png\'", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
 #line hidden
-#line 13
+#line 14
   testRunner.Then("the html file should contain", "            <div class=\"logo\">\r\n                <img alt=\"Logo\" src=\"data:image/p" +
                     "ng;base64,iVBORw0KGgoAAAANSUhEUgAAAPAAAAC0CAMAAACdQlHaAAAABGdBTUEAALGPC/xhBQAAAw" +
                     "BQTFRFAAAABAQECAgIDAwMEBAQFBQUGBgYHBwcICAgJCQkKCgoLCwsMDAwNDQ0ODg4PDw8QEBARERESE" +
@@ -303,24 +305,24 @@ this.ScenarioSetup(scenarioInfo);
         public virtual void TheHtmlFileContainsADifferentLogo_TheHtmlFileShouldNotBeChanged()
         {
             TechTalk.SpecFlow.ScenarioInfo scenarioInfo = new TechTalk.SpecFlow.ScenarioInfo("The Html file contains a different logo - the html file should not be changed", ((string[])(null)));
-#line 20
+#line 21
 this.ScenarioSetup(scenarioInfo);
 #line hidden
-#line 21
+#line 22
   testRunner.Given("I have the html file exported from SpecLog contains", "            <div class=\"logo\">\r\n                <a href=\"http://www.speclog.net/\"" +
                     ">\r\n                    <img title=\"Visit SpecLog.net\" alt=\"SpecLog logo\" src=\"da" +
                     "ta:image/png;base64,something else\" />\r\n                </a>\r\n            </div>" +
                     "", ((TechTalk.SpecFlow.Table)(null)), "Given ");
-#line 29
+#line 30
   testRunner.When("I replace the logo with file \'logo.png\'", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
 #line hidden
-#line 30
+#line 31
   testRunner.Then("the html file should contain", "            <div class=\"logo\">\r\n                <a href=\"http://www.speclog.net/\"" +
                     ">\r\n                    <img title=\"Visit SpecLog.net\" alt=\"SpecLog logo\" src=\"da" +
                     "ta:image/png;base64,something else\" />\r\n                </a>\r\n            </div>" +
                     "", ((TechTalk.SpecFlow.Table)(null)), "Then ");
 #line hidden
-#line 38
+#line 39
   testRunner.And("I should see a message saying", "The SpecLog Exported Html file did not contain the default SpecLog logo. Did you " +
                     "replace it already?", ((TechTalk.SpecFlow.Table)(null)), "And ");
 #line hidden

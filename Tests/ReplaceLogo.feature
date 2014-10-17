@@ -1,5 +1,6 @@
 ﻿Feature: Replace Logo
 
+@localOnly
 Scenario: Replacing the logo
   Given I have the html file exported from SpecLog contains
       """

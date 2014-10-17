@@ -70,6 +70,7 @@ namespace Aim.SpecLogLogoReplacer.Tests
     }
 
     [Test]
+    [DescriptionAttribute("localOnly")]
     public void ConvertBitmapToBase64_ProperBitmap_ReturnsCorrectValue()
     {
       var logoReplacer = CreateLogoReplacer();
